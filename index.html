@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cd70427053.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>week 5 homework</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-light bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand">MyWeatherApp</a>
+          <form id="search-city-form" class="d-flex">
+            <input
+              class="form-control me-2"
+              id="search-city-input"
+              type="search"
+              placeholder="Search city"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-secondary" id="search-city-button" type="submit">
+              Search
+            </button>
+             <button class="btn btn-outline-secondary" id="current-location-button">
+              My location
+            </button>
+          </form>
+        </div>
+      </nav>
+      <div class="header">
+        <div class="row">
+          <div class="col-sm-4">
+            <h1>
+              <span id="weather-description">Partly cloudy</span><span class="h1-icon"><i class="fas fa-cloud-sun"></i></span>
+          
+              <span class="temperature">
+                <span id="temperature-c">21 </span> <span id=centigrades>º C</span>
+                <span id="temperature-f">F</span>
+              </span>
+              <br />
+              <div id="city-name">CARACAS</div>
+              <div id="country-name">Venezuela</div>
+            </h1>
+          </div>
+          <div class="col-sm-4">
+            <h1>
+              <span class="rain-humidity-wind">
+                <span> ☔</span> <span id="rain-chance"> 5</span> <span>%</span>
+                <br />
+                <span>💦</span><span id="humidity"> 83</span><span>%</span>
+                <br />
+              <span>🌬</span> <span id="wind-speed">5</span> <span>km/h</span>
+              </span>
+            </h1>
+          </div>
+          <div class="col-sm-4">
+            <h1>
+              <div class="date-time-location">
+                <div id="date">Sunday Dec 20 2020</div>
+                
+                  <div class="time-zone-info"><span>UTC </span> <span id="time-zone">-4</span> </div>
+                  <span id="time">
+                  8:00 AM
+                </span>
+                <div class="location">
+                  <span>lat.</span><span id="latitude">10°29'16.84" N </span> <br />
+                  <span>lon.</span><span id="longitude">  -66°52'45.08" W </span>
+                </div>
+              </div>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="next-days">
+        <div class="row">
+          <div class="col-sm-2">
+            <h2>sun</h2>
+            <h3>
+              <span class="icon-today">
+                <i class="fas fa-cloud-sun"></i>
+              </span>
+            </h3>
+            <h4 class="highest-temperature">26º</h4>
+            <h4 class="lowest-temperature">17º</h4>
+          </div>
+          <div class="col-sm-2">
+            <h2>mon</h2>
+            <h3>
+              <i class="fas fa-cloud-sun"></i>
+            </h3>
+            <h4 class="highest-temperature">26º</h4>
+            <h4 class="lowest-temperature">18º</h4>
+          </div>
+          <div class="col-sm-2">
+            <h2>tue</h2>
+            <h3>
+              <i class="fas fa-cloud-sun"></i>
+            </h3>
+            <h4 class="highest-temperature">25º</h4>
+            <h4 class="lowest-temperature">18º</h4>
+          </div>
+          <div class="col-sm-2">
+            <h2>wed</h2>
+            <h3>
+              <i class="fas fa-cloud-sun"></i>
+            </h3>
+            <h4 class="highest-temperature">25º</h4>
+            <h4 class="lowest-temperature">17º</h4>
+          </div>
+          <div class="col-sm-2">
+            <h2>thu</h2>
+            <h3>
+              <i class="fas fa-cloud-sun"></i>
+            </h3>
+            <h4 class="highest-temperature">25º</h4>
+            <h4 class="lowest-temperature">17º</h4>
+          </div>
+          <div class="col-sm-2">
+            <h2>fri</h2>
+            <h3>
+              <i class="fas fa-cloud-sun"></i>
+            </h3>
+            <h4 class="highest-temperature">24º</h4>
+            <h4 class="lowest-temperature">17º</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer">
+          <div class="header">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1 class="moreForecasts">
+              Weekly forecast
+            </h1>
+          </div>
+          <div class="col-sm-6">
+            <h1 class="moreForecasts">
+              Monthly forecast
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="code-credit">
+        coded by Maria F. Loscher
+      </div>
+    </div>
+  </body>
+  <script src="src/index.js"></script>
+</html>

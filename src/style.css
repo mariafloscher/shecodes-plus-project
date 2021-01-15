@@ -1,0 +1,135 @@
+.header {
+  background-color: #dfdfdf;
+}
+
+.code-credit {
+  padding: 5px;
+  margin: 5px auto;
+  font-size: 14px;
+  color: rgb(85, 85, 85, 0.7);
+}
+
+.container {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #dfdfdf;
+}
+
+h1 {
+  border: #dfdfdf;
+  border-style: solid;
+  border-width: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+#weather-description {
+  font-size: 24px;
+  display: block;
+  opacity: 0.5;
+}
+
+.h1-icon {
+  display: inline;
+  color: #ffb900;
+}
+
+#city-name {
+  padding: 5px 5px 10px 5px;
+  font-size: 44px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+#country-name {
+  font-size: 28px;
+  display: inline-block;
+  opacity: 0.5;
+  text-align: right;
+}
+
+.temperature {
+  display: block;
+  float: right;
+}
+
+#temperature-f:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#temperature-f {
+  opacity: 0.5;
+}
+
+#rain-chance {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.date-time-location {
+  text-align: right;
+  font-size: 28px;
+  display: block;
+}
+
+.location {
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+.time-zone-info {
+  display: inline-block;
+  font-size: 20px;
+  color: #ff5e00;
+}
+
+h2 {
+  text-align: center;
+  font-size: 14px;
+}
+
+.next-days {
+  background-color: white;
+  border: #dfdfdf;
+  border-style: solid;
+  border-width: 10px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+h3 {
+  text-align: center;
+  color: #ffb900;
+}
+
+h4 {
+  text-align: center;
+  font-size: 14px;
+}
+
+.highest-temperature {
+  color: #ff5e00;
+}
+
+.lowest-temperature {
+  color: #0084ff;
+}
+
+.footer {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.moreForecasts {
+  font-size: 30px;
+  background-color: white;
+  color: #999999;
+}
+
+.moreForecasts hover {
+  background-color: #999999;
+}
