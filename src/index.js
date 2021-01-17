@@ -73,6 +73,9 @@ function showWeatherInfo(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#pressure").innerHTML = Math.round(
+    response.data.main.pressure
+  );
 }
 
 function searchCity(city) {
@@ -92,6 +95,7 @@ function searchLocation(position) {
   let lon = `${position.coords.longitude}`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherInfo);
+  console.log(response.data);
 }
 function getCurrentLocation(event) {
   event.preventDefault();
