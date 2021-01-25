@@ -1,6 +1,5 @@
-let now = new Date();
-
-function formatDate(now) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -11,7 +10,7 @@ function formatDate(now) {
     "Saturday",
   ];
 
-  let day = days[now.getDay()];
+  let day = days[timestamp.getDay()];
 
   let months = [
     "January",
@@ -27,11 +26,9 @@ function formatDate(now) {
     "November",
     "December",
   ];
-  let month = months[now.getMonth()];
+  let month = months[timestamp.getMonth()];
 
-  let date = now.getDate();
-
-  let year = now.getFullYear();
+  let year = timestamp.getFullYear();
 
   let formattedDate = `${day}, ${month} ${date}, ${year}`;
 
@@ -39,11 +36,12 @@ function formatDate(now) {
 }
 
 let date = document.querySelector("#date");
-date.innerHTML = `${formatDate(now)}`;
+date.innerHTML = `${formatDate(timestamp)}`;
 
-function formatTime(now) {
-  let hour = now.getHours();
-  let minutes = now.getMinutes();
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     return `0` + minutes;
   }
@@ -52,16 +50,27 @@ function formatTime(now) {
 }
 
 let time = document.querySelector("#time");
-time.innerHTML = `${formatTime(now)}`;
+time.innerHTML = `${formatTime(timestamp)}`;
 
 function showWeatherInfo(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#country-name").innerHTML = response.data.sys.country;
-  ///document.querySelector("#h1-icon").innerHTML = <img src=`http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`>;
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   document.querySelector("#latitude").innerHTML = response.data.coord.lat;
   document.querySelector("#longitude").innerHTML = response.data.coord.lon;
   document.querySelector("#time-zone").innerHTML =
     response.data.timezone / 3600;
+  document.querySelector("#time").innerHTML = Math.round(
+    response.data.main.pressure
+  );
+  document.querySelector("#date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#temperature-c").innerHTML = Math.round(

@@ -43,7 +43,13 @@
         <div class="row">
           <div class="col-sm-4">
             <h1>
-              <span id="weather-description">Partly cloudy</span><span class="h1-icon"><i class="fas fa-cloud-sun"></i></span>
+              <span class="additional-information" id="weather-description">Partly cloudy</span><span class="h1-icon">
+                <img id="icon"
+                class="float-left"
+                alt="icon"
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png">
+              </img>
+            </span>
           
               <span class="temperature">
                 <span id="temperature-c">21 </span> <span id=centigrades>º C</span>
@@ -68,7 +74,8 @@
           <div class="col-sm-4">
             <h1>
               <div class="date-time-location">
-                <div id="date">Sunday Dec 20 2020</div>
+                <div> <span class="additional-information">Last update<br>
+                 </span> <span id="date">Sunday Dec 20 2020</span></div>
                 
                   <div class="time-zone-info"><span>UTC </span> <span id="time-zone">-4</span> </div>
                   <span id="time">

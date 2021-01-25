@@ -24,7 +24,7 @@ h1 {
   padding: 10px;
 }
 
-#weather-description {
+.additional-information {
   font-size: 24px;
   display: block;
   opacity: 0.5;
