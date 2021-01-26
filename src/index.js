@@ -9,9 +9,7 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-
-  let day = days[timestamp.getDay()];
-
+  let day = days[date.getDay()];
   let months = [
     "January",
     "February",
@@ -26,18 +24,14 @@ function formatDate(timestamp) {
     "November",
     "December",
   ];
-  let month = months[timestamp.getMonth()];
-
-  let year = timestamp.getFullYear();
-
+  let month = months[date.getMonth()];
+  let year = date.getFullYear();
   let formattedDate = `${day}, ${month} ${date}, ${year}`;
-
   return formattedDate;
 }
-
+let now = new Date();
 let date = document.querySelector("#date");
-date.innerHTML = `${formatDate(timestamp)}`;
-
+date.innerHTML = `${formatDate(now)}`;
 function formatTime(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
@@ -48,9 +42,8 @@ function formatTime(timestamp) {
   let formattedTime = `${hour}:${minutes}`;
   return formattedTime;
 }
-
 let time = document.querySelector("#time");
-time.innerHTML = `${formatTime(timestamp)}`;
+time.innerHTML = `${formatTime(now)}`;
 
 function showWeatherInfo(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
@@ -63,11 +56,10 @@ function showWeatherInfo(response) {
   weatherIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   document.querySelector("#latitude").innerHTML = response.data.coord.lat;
   document.querySelector("#longitude").innerHTML = response.data.coord.lon;
-  document.querySelector("#time-zone").innerHTML =
-    response.data.timezone / 3600;
-  document.querySelector("#time").innerHTML = Math.round(
-    response.data.main.pressure
+  document.querySelector("#time-zone").innerHTML = Math.round(
+    response.data.timezone / 3600
   );
+  document.querySelector("#time").innerHTML = formatTime(response.data.time);
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
@@ -104,7 +96,6 @@ function searchLocation(position) {
   let lon = `${position.coords.longitude}`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherInfo);
-  console.log(response.data);
 }
 function getCurrentLocation(event) {
   event.preventDefault();
