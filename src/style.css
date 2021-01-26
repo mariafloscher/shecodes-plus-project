@@ -2,6 +2,12 @@
   background-color: #dfdfdf;
 }
 
+#main-info {
+  background-color: #dfdfdf;
+  background-clip: content-box;
+  min-height: 200px;
+}
+
 .code-credit {
   padding: 5px;
   margin: 5px auto;
@@ -22,6 +28,7 @@ h1 {
   border-width: 10px;
   background-color: white;
   padding: 10px;
+  max-height: 300px;
 }
 
 .additional-information {
@@ -68,25 +75,25 @@ h1 {
   opacity: 0.5;
 }
 
-#pressure {
+#pressure-humidity-wind {
   display: inline-block;
   padding: 5px;
   margin: 0 auto;
   text-align: center;
 }
 
-.date-time-location {
+#date-time-location {
   text-align: right;
   font-size: 28px;
   display: block;
 }
 
-.location {
+#location {
   font-size: 18px;
   opacity: 0.5;
 }
 
-.time-zone-info {
+#time-zone-info {
   display: inline-block;
   font-size: 20px;
   color: #ff5e00;

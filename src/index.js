@@ -26,24 +26,27 @@ function formatDate(timestamp) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  let formattedDate = `${day}, ${month} ${date}, ${year}`;
+  let formattedDate = `${day}, ${month} ${date.getDate()}, ${year}`;
   return formattedDate;
 }
+
 let now = new Date();
 let date = document.querySelector("#date");
 date.innerHTML = `${formatDate(now)}`;
+
 function formatTime(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0` + hour;
+  }
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    return `0` + minutes;
+    minutes = `0` + minutes;
   }
   let formattedTime = `${hour}:${minutes}`;
   return formattedTime;
 }
-let time = document.querySelector("#time");
-time.innerHTML = `${formatTime(now)}`;
 
 function showWeatherInfo(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
@@ -59,7 +62,9 @@ function showWeatherInfo(response) {
   document.querySelector("#time-zone").innerHTML = Math.round(
     response.data.timezone / 3600
   );
-  document.querySelector("#time").innerHTML = formatTime(response.data.time);
+  document.querySelector("#time").innerHTML = formatTime(
+    response.data.dt * 1000
+  );
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
@@ -90,6 +95,7 @@ function handleCitySubmit(event) {
   let city = document.querySelector("#search-city-input").value;
   searchCity(city);
 }
+
 function searchLocation(position) {
   let apiKey = "e056cd661dc38600e82e2301e14e451d";
   let lat = `${position.coords.latitude}`;
