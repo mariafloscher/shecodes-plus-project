@@ -26,7 +26,7 @@ function formatDate(timestamp) {
   ];
   let month = months[date.getMonth()];
   let year = date.getFullYear();
-  let formattedDate = `${day}, ${month} ${date.getDate()}, ${year}`;
+  let formattedDate = `${day} ${"<br />"} ${month} ${date.getDate()}, ${year}`;
   return formattedDate;
 }
 

@@ -41,8 +41,9 @@
       </nav>
       <div class="header">
         <div class="row">
-          <div class="col-sm-4" id="main-info">
+          <div class="col-sm-4">
             <h1>
+              <span id="main-info">
               <span class="additional-information" id="weather-description">Partly cloudy</span><span class="h1-icon">
                 <img id="icon"
                 class="float-left"
@@ -50,7 +51,6 @@
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png">
               </img>
             </span>
-          
               <span class="temperature">
                 <span id="temperature-c">21 </span> <span id=centigrades>º C</span>
                 <span id="temperature-f">F</span>
@@ -58,14 +58,21 @@
               <br />
               <div id="city-name">CARACAS</div>
               <div id="country-name">Venezuela</div>
+              <div class="time-zone-info"><span>UTC </span> <span id="time-zone">-4</span>
+                <span id="location">
+                  <span>lat.</span><span id="latitude">10°29'16.84" N </span>,
+                  <span>lon.</span><span id="longitude">  -66°52'45.08" W </span>
+                </span> 
+              </div>
             </h1>
           </div>
           <div class="col-sm-4">
+            </span>
             <h1>
               <span id="pressure-humidity-wind">
                 <span class="emoji">♨</span> <span id="pressure">x</span> <span>Pa</span>
                 <br />
-                <span class="emoji">💦</span> <span id="humidity">y</span><span>%</span>
+                <span class="emoji">💦</span> <span id="humidity">y</span> <span>%</span>
                 <br />
               <span class="emoji">🌬</span> <span id="wind-speed">z</span> <span>km/h</span>
               </span>
@@ -74,17 +81,13 @@
           <div class="col-sm-4">
             <h1>
               <div id="date-time-location">
-                <div> <span class="additional-information">Last update<br>
-                 </span> <span id="date">Sunday Dec 20 2020</span></div>
-                
-                  <div id="time-zone-info"><span>UTC </span> <span id="time-zone">-4</span> </div>
-                  <span id="time">
+                <div><span class="additional-information">Last update<br>
+                 </span><span id="date">Sunday
+                  <br /> Dec 20 2020</span></div>
+                  <div id="time">
                   8:00 AM
-                </span>
-                <div id="location">
-                  <span>lat.</span><span id="latitude">10°29'16.84" N </span> <br />
-                  <span>lon.</span><span id="longitude">  -66°52'45.08" W </span>
                 </div>
+               <div class="time-zone-info" id="your-time-zone">Your local time</div>
               </div>
             </h1>
           </div>
