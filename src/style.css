@@ -174,16 +174,6 @@ h4 {
   margin: 10px auto;
 }
 
-.moreForecasts {
-  font-size: 30px;
-  background-color: white;
-  color: #999999;
-}
-
-.moreForecasts hover {
-  background-color: #999999;
-}
-
 a #githubLink:link {
   color: #999999;
   text-decoration: none;
