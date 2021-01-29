@@ -93,21 +93,17 @@ function showForecast(response) {
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
-  <div class="col-sm-2">
-   <h2>${formatTime(forecast.dt * 1000)}</h2>
-     <h3>
-       <span class="icon-today">
-        <img src="http://openweathermap.org/img/wn/${
+    <div class="col-sm-2">
+      <h2>${formatTime(forecast.dt * 1000)}</h2>
+        <h3>
+        <img
+        src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
-        }@2x.png"/>
-       </span>
-      </h3>
-        <h4 class="highest-temperature">${Math.round(
-          forecast.main.temp_max
-        )}º</h4>
-        <h4 class="lowest-temperature">${Math.round(
-          forecast.main.temp_min
-        )}º</h4>
+        }@2x.png"
+      />
+        </h3>
+        <h4 id="highest-temperature">${Math.round(forecast.main.temp_max)}º</h4>
+        <h4 id="lowest-temperature">${Math.round(forecast.main.temp_min)}º</h4>
     </div>`;
   }
 }
@@ -117,7 +113,7 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherInfo);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 

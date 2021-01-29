@@ -2,11 +2,12 @@
   background-color: #dfdfdf;
 }
 
-.code-credit {
+#code-credit {
   padding: 5px;
   margin: 5px auto;
   font-size: 14px;
   color: rgb(85, 85, 85, 0.7);
+  text-align: center;
 }
 
 .container {
@@ -161,17 +162,12 @@ h4 {
   font-size: 14px;
 }
 
-.highest-temperature {
+#highest-temperature {
   color: #ff5e00;
 }
 
-.lowest-temperature {
+#lowest-temperature {
   color: #0084ff;
-}
-
-.footer {
-  text-align: center;
-  margin: 10px auto;
 }
 
 a #githubLink:link {
