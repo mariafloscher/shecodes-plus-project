@@ -102,8 +102,8 @@ function showForecast(response) {
         }@2x.png"
       />
         </h3>
-        <h4 id="highest-temperature">${Math.round(forecast.main.temp_max)}º</h4>
-        <h4 id="lowest-temperature">${Math.round(forecast.main.temp_min)}º</h4>
+        <h4 id="highest-temperature">${Math.ceil(forecast.main.temp_max)}º</h4>
+        <h4 id="lowest-temperature">${Math.floor(forecast.main.temp_min)}º</h4>
     </div>`;
   }
 }
