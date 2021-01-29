@@ -61,6 +61,7 @@ h1 {
   cursor: default;
   color: #000000;
   text-decoration: none;
+  opacity: 1;
 }
 
 .temperature .active:hover {
@@ -68,20 +69,16 @@ h1 {
   text-decoration: none;
 }
 
-.temperature .active {
-  color: #000000;
-  text-decoration: none;
-}
-
-#temperature-f {
+.temperature a {
   color: #000000;
   text-decoration: none;
   opacity: 0.5;
 }
 
-#temperature-f:hover {
+.temperature a:hover {
   cursor: pointer;
   opacity: 1;
+  color: #000000;
 }
 
 .emoji {
@@ -137,16 +134,21 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
-.next-days {
+#forecast {
   background-color: white;
   border: #dfdfdf;
   border-style: solid;
   border-width: 10px;
   margin: 0 auto;
   padding: 5px;
+}
+
+.forecast-icon {
+  width: 50px;
+  height: 50px;
 }
 
 h3 {
