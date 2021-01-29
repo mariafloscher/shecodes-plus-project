@@ -70,8 +70,9 @@ function showWeatherInfo(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
-  document.querySelector("#temperature-c").innerHTML = Math.round(
-    response.data.main.temp
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temperature-value").innerHTML = Math.round(
+    celsiusTemperature
   );
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
@@ -114,24 +115,29 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 let cityForm = document.querySelector("#search-city-form");
 cityForm.addEventListener("submit", handleCitySubmit);
 
+function convertCToF(event) {
+  event.preventDefault();
+  celsiusInitial.classList.remove("active");
+  fahrenheitInitial.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature-value");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
 function convertFToC(event) {
   event.preventDefault();
-  document.querySelector("#temperature-c").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusInitial.classList.add("active");
+  fahrenheitInitial.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature-value");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
+
+let fahrenheitInitial = document.querySelector("#temperature-f");
+fahrenheitInitial.addEventListener("click", convertCToF);
 
 let celsiusInitial = document.querySelector("#temperature-c");
 celsiusInitial.addEventListener("click", convertFToC);
-
-function convertCToF(event) {
-  event.preventDefault();
-  let celsius = response.data.main.temp;
-  let farenheit = document.querySelector("#temperature-c");
-  farenheit.innerHTML = celsius * 1.8 + 32;
-}
-
-let farenheitInitial = document.querySelector("#temperature-f");
-farenheitInitial.addEventListener("click", convertCToF);
 
 searchCity("Tokyo");

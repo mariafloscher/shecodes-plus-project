@@ -23,6 +23,7 @@ h1 {
   background-color: white;
   padding: 10px;
   max-height: 300px;
+  color: #000000;
 }
 
 .additional-information {
@@ -56,10 +57,26 @@ h1 {
   float: right;
 }
 
-.emoji {
-  font-size: 30px;
-  display: inline-block;
-  padding: 0px auto;
+.temperature .active {
+  cursor: default;
+  color: #000000;
+  text-decoration: none;
+}
+
+.temperature .active:hover {
+  cursor: default;
+  text-decoration: none;
+}
+
+.temperature .active {
+  color: #000000;
+  text-decoration: none;
+}
+
+#temperature-f {
+  color: #000000;
+  text-decoration: none;
+  opacity: 0.5;
 }
 
 #temperature-f:hover {
@@ -67,8 +84,14 @@ h1 {
   opacity: 1;
 }
 
-#temperature-f {
-  opacity: 0.5;
+.emoji {
+  font-size: 30px;
+  display: inline-block;
+  padding: 0px auto;
+}
+
+#temperature-f:active {
+  opacity: 1;
 }
 
 #pressure-humidity-wind {
@@ -159,22 +182,22 @@ h4 {
   background-color: #999999;
 }
 
-a:link {
+a #githubLink:link {
   color: #999999;
   text-decoration: none;
 }
 
-a:active {
+a #githubLink:active {
   color: #ffb900;
   text-decoration: underline;
 }
 
-a:visited {
+a #githubLink:visited {
   color: #0084ff;
   text-decoration: none;
 }
 
-a:hover {
+a #githubLink:hover {
   color: #999999;
   text-decoration: underline;
 }
