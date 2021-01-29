@@ -87,20 +87,29 @@ function showWeatherInfo(response) {
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
   <div class="col-sm-2">
-   <h2>17:00</h2>
+   <h2>${formatTime(forecast.dt * 1000)}</h2>
      <h3>
        <span class="icon-today">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/snow_light.png" class="forecast-icon"></i>
+        <img src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"/>
        </span>
       </h3>
         <h4 class="highest-temperature">${Math.round(
           forecast.main.temp_max
         )}º</h4>
-        <h4 class="lowest-temperature">17º</h4>
+        <h4 class="lowest-temperature">${Math.round(
+          forecast.main.temp_min
+        )}º</h4>
     </div>`;
+  }
 }
 
 function searchCity(city) {
